@@ -1,19 +1,20 @@
 import "./App.css";
 import PrimaryButton from "./components/atoms/button/PrimaryButton";
 import SecondaryButton from "./components/atoms/button/SecondaryButton";
+import SearchInput from "./components/molecules/SearchInput";
+import UserCard from './components/organism/user/UserCard';
 
 function App() {
   return (
-    <div>
       <div className="App">
         <PrimaryButton>Test</PrimaryButton>
-        <PrimaryButton>Click Me !</PrimaryButton>
-      </div>
-
-      <div className="App">
         <SecondaryButton>2番目のボタン</SecondaryButton>
+
+        <br/>
+        <SearchInput />
+
+        <UserCard></UserCard>
       </div>
-    </div>
   );
 }
 

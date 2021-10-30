@@ -16,8 +16,7 @@ const SearchInput = () => {
 
 const SContainer = styled.div`
   display: flex;
-
-`
+`;
 
 const SButtonWrapper = styled.div`
   padding-left: 8px;

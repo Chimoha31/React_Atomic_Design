@@ -20,13 +20,10 @@ function App() {
     <div className="App">
       <PrimaryButton>Test</PrimaryButton>
       <SecondaryButton>検索</SecondaryButton>
-
       <br />
       <SearchInput />
-
       <UserCard user={user}></UserCard>
     </div>
   );
 }
-
 export default App;

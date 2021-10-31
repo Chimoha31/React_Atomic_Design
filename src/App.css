@@ -6,6 +6,8 @@
 body {
   background-color: #e4f9f5;
   margin: 0;
+  /* 画面の大きさMAXという意味 */
+  min-height: 100vh;
 }
 
 

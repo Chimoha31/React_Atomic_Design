@@ -4,7 +4,8 @@ import PrimaryButton from "./components/atoms/button/PrimaryButton";
 import SecondaryButton from "./components/atoms/button/SecondaryButton";
 import SearchInput from "./components/molecules/SearchInput";
 import UserCard from "./components/organism/user/UserCard";
-import HeaderOnly from "./components/templetes/HeaderOnly";
+// import HeaderOnly from "./components/templetes/HeaderOnly";
+import DefaultLayout from './components/templetes/DefaultLayout';
 
 function App() {
   const user = {
@@ -21,13 +22,13 @@ function App() {
   return (
     // <div className="App">
     <BrowserRouter>
-      <HeaderOnly>
+      <DefaultLayout>
         <PrimaryButton>Test</PrimaryButton>
         <SecondaryButton>検索</SecondaryButton>
         <br />
         <SearchInput />
         <UserCard user={user}></UserCard>
-      </HeaderOnly>
+      </DefaultLayout>
     </BrowserRouter>
     // </div>
   );

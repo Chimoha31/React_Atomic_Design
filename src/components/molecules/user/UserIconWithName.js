@@ -1,11 +1,13 @@
-import React, { useContext, memo } from 'react';
+import React, { memo } from "react";
+import { useRecoilValue } from 'recoil';
 import styled from "styled-components";
-import {UserContext} from '../../../providers/UserProvider';
-
+// import { UserContext } from "../../../providers/UserProvider";
+import userState from '../../../store/userState';
 
 const UserIconWithName = memo((props) => {
-  const { image, name} = props;
-  const { userInfo } = useContext(UserContext);
+  const { image, name } = props;
+  // const { userInfo } = useContext(UserContext);
+  const userInfo = useRecoilValue(userState);
   const isAdmin = userInfo ? userInfo.isAdmin : false;
 
   return (
@@ -36,6 +38,6 @@ const SEdit = styled.span`
   text-decoration: underline;
   color: #aaa;
   cursor: pointer;
-`
+`;
 
 export default UserIconWithName;

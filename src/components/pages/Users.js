@@ -1,11 +1,13 @@
+import React from "react";
+import { useRecoilState } from 'recoil';
 import styled from "styled-components";
 import SecondaryButton from "../atoms/button/SecondaryButton";
 import SearchInput from "../molecules/SearchInput";
 import UserCard from "../organism/user/UserCard";
-import React, { useContext } from 'react';
-import { UserContext } from "../../providers/UserProvider";
+// import { UserContext } from "../../providers/UserProvider";
+import userState from '../../store/userState';
 
-const users = [...Array(10).keys()].map(((val) => {
+const users = [...Array(10).keys()].map((val) => {
   return {
     id: val,
     name: `じゃけぇ${val}`,
@@ -16,13 +18,16 @@ const users = [...Array(10).keys()].map(((val) => {
       name: "テスト株式会社",
     },
     website: "https://google.com",
-  }
-}));
+  };
+});
 
 const Users = () => {
-  const { userInfo, setUserInfo } = useContext(UserContext);
+  // const { userInfo, setUserInfo } = useContext(UserContext);
+  const [ userInfo, setUserInfo ] = useRecoilState(userState);
+
+
   const onClickSwitch = () => setUserInfo({ isAdmin: !userInfo.isAdmin });
-  
+
   return (
     <SContainer>
       <h2>一覧ユーザー</h2>
@@ -32,7 +37,7 @@ const Users = () => {
 
       <SUserArea>
         {users.map((obj) => {
-        return <UserCard key={obj.id} user={obj} />
+          return <UserCard key={obj.id} user={obj} />;
         })}
       </SUserArea>
     </SContainer>
@@ -44,7 +49,7 @@ const SContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 24px;
-`
+`;
 
 const SUserArea = styled.div`
   padding-top: 40px;
@@ -52,6 +57,6 @@ const SUserArea = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
-`
+`;
 
 export default Users;

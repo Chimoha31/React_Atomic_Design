@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import styled from "styled-components";
-import UserContext from '../../../../src/providers/UserProvider';
+import {UserContext} from '../../../providers/UserProvider';
 
 
 const UserIconWithName = (props) => {
-  const { image, name, isAdmin } = props;
-  const context = useContext(UserContext);
-  console.log(context);
+  const { image, name} = props;
+  const { userInfo } = useContext(UserContext);
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
 
   return (
     <SCountainer>

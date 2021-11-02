@@ -4,11 +4,11 @@ import styled from 'styled-components';
 
 // このpropsはbuttonの文言に対して
 const SecondaryButton = (props) => {
-  const { children } = props;
+  const { children, onClick} = props;
 
   return(
     <>
-      <SButton>{children}</SButton>
+      <SButton onClick={onClick}>{children}</SButton>
     </>
   )
 };

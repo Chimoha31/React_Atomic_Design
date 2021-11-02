@@ -1,38 +1,14 @@
-// import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-// import PrimaryButton from "./components/atoms/button/PrimaryButton";
-// import SecondaryButton from "./components/atoms/button/SecondaryButton";
-// import SearchInput from "./components/molecules/SearchInput";
-// import UserCard from "./components/organism/user/UserCard";
-// // import HeaderOnly from "./components/templetes/HeaderOnly";
-// import DefaultLayout from './components/templetes/DefaultLayout';
 import Router from '../src/router/Router';
+import UserProvider from "./providers/UserProvider";
 
 function App() {
-  // const user = {
-  //   name: "じゃけぇ",
-  //   image: "https://source.unsplash.com/NE0XGVKTmcA",
-  //   email: "12345@example.com",
-  //   phone: "909-111-2222",
-  //   company: {
-  //     name: "テスト株式会社",
-  //   },
-  //   website: "https://google.com",
-  // };
 
   return (
-    <Router></Router>
-    // // <div className="App">
-    // <BrowserRouter>
-    //   <DefaultLayout>
-    //     <PrimaryButton>Test</PrimaryButton>
-    //     <SecondaryButton>検索</SecondaryButton>
-    //     <br />
-    //     <SearchInput />
-    //     <UserCard user={user}></UserCard>
-    //   </DefaultLayout>
-    // </BrowserRouter>
-    // // </div>
+    <UserProvider>
+      <Router />
+    </UserProvider>
+    
   );
 }
 export default App;

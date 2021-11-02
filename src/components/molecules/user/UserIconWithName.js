@@ -1,7 +1,12 @@
+import React, { useContext } from 'react';
 import styled from "styled-components";
+import UserContext from '../../../../src/providers/UserProvider';
+
 
 const UserIconWithName = (props) => {
   const { image, name, isAdmin } = props;
+  const context = useContext(UserContext);
+  console.log(context);
 
   return (
     <SCountainer>

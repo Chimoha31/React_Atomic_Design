@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 // このpropsはbuttonの文言に対して
 const SecondaryButton = (props) => {
-  const { children, onClick} = props;
+  const { children, onClick } = props;
 
   return(
     <>
